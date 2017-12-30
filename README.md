@@ -150,7 +150,7 @@ U.Sprite = function(x, y, width, height, url)
     canvas2D.rotate(self.angle * Math.PI/180);
     FrameExecute();
     canvas2D.drawImage(image,frame.x,frame.y,frame.width,frame.height,
-      -self.width / 2, -self.height / 2, self.width, self.height);
+      -self.width * self.anchorX , -self.height * self.anchorY, self.width, self.height);
     canvas2D.restore();
   };
 };
