@@ -12,9 +12,11 @@ require(["U3D"],function(U3D)
     U.Sprite.call(this,x,y,width,height,url);
     var self = this;
     self.z = 1;
-    self.anchorX = 1;
-    self.anchorY = 0.5;
-    self.speed = 20;
+    self.collisionWidth = 20;
+    self.collisionHeight = 20;
+    self.anchorX = 0.5;
+    self.anchorY = 1;
+    self.speed = 50;
     self.collisionTarget = ["Baby"];
     self.artist = { "default" : [{x:0,y:0,width:37,height:39},{x:38,y:0,width:37,height:39}] };
     self.behaviors =

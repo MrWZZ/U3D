@@ -112,9 +112,9 @@ define(function()
     function ConllisionCheck(col1,col2)
     {
       var x = Math.abs(col1.x - col2.x);
-      var w = Math.abs((col1.width+col2.width)/2);
+      var w = Math.abs((col1.collisionWidth + col2.collisionWidth)/2);
       var y = Math.abs(col1.y - col2.y);
-      var h = Math.abs((col1.height+col2.height)/2);
+      var h = Math.abs((col1.collisionHeight + col2.collisionHeight)/2);
 
       if(x < w && y < h)
       {
@@ -156,6 +156,8 @@ define(function()
       self.z = 0;                              // z轴高度（画布高度）
       self.anchorX = 0.5;                      // x轴锚点的位置
       self.anchorY = 0.5;                      // y轴锚点的位置
+      self.collisionWidth = self.width;        // 碰撞体宽度
+      self.collisionHeight = self.height;      // 碰撞体高度
       //此物体的碰撞体名称
       self.collisionType = self.constructor.name;
       //此物体需要和哪些物体进行碰撞检测，如：["Cat","Dog"]
