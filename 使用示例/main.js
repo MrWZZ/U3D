@@ -12,6 +12,8 @@ require(["U3D"],function(U3D)
     U.Sprite.call(this,x,y,width,height,url);
     var self = this;
     self.z = 1;
+    self.anchorX = 1;
+    self.anchorY = 0.5;
     self.speed = 20;
     self.collisionTarget = ["Baby"];
     self.artist = { "default" : [{x:0,y:0,width:37,height:39},{x:38,y:0,width:37,height:39}] };
@@ -25,6 +27,7 @@ require(["U3D"],function(U3D)
           if (!self.behaviors["default"].bool) { return; }
           var inSelf = self.behaviors["default"];
           self.x += U.Time.deltaTime * self.speed;
+          self.angle += 1;
         }
       }
     };

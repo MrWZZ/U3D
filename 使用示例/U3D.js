@@ -154,6 +154,8 @@ define(function()
       self.angle = 0;                          // 旋转的角度
       self.alpha = 1;                          // 透明度
       self.z = 0;                              // z轴高度（画布高度）
+      self.anchorX = 0.5;                      // x轴锚点的位置
+      self.anchorY = 0.5;                      // y轴锚点的位置
       //此物体的碰撞体名称
       self.collisionType = self.constructor.name;
       //此物体需要和哪些物体进行碰撞检测，如：["Cat","Dog"]
@@ -277,7 +279,7 @@ define(function()
         canvas2D.rotate(self.angle * Math.PI/180);
         FrameExecute();
         canvas2D.drawImage(image,frame.x,frame.y,frame.width,frame.height,
-          -self.width / 2, -self.height / 2, self.width, self.height);
+          -self.width * self.anchorX , -self.height * self.anchorY, self.width, self.height);
         canvas2D.restore();
       };
     };
